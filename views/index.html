@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="full" lang="en">
+<html ng-app class="full" lang="en" ng-init="ircViewActive = true")>
 
 <head>
 
@@ -25,8 +25,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-</head>
-
+</head>    
 <body>
 
     <!-- Navigation -->
@@ -45,26 +44,32 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
+                          <li>
                         <a href="#">Services</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
                     </li>
+                                  <li>
+                        <a href="#"><button ng-show="ircViewActive" ng-click="ircViewActive = !ircViewActive" class="btn btn-block btn-success">Hide this silly client, i want to see shagbark!</button></a>
+
+                   
+                    </li>
+                    <li>
+                             <a href="#"><button ng-show="!ircViewActive" ng-click="ircViewActive = !ircViewActive" class="btn btn-block btn-success">Enough Shagbark, back to business!</button></a>
+                    </li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-
-    <div class="maincontent container-fluid fixed-bottom">
+    <div >
+    <div ng-show="ircViewActive" class="maincontent container-fluid fixed-bottom" 
         <div class="row">
             <div class="col-md-12">
-                <iframe src="https://kiwiirc.com/client/irc.bsnet.se/?nick=guest|?&theme=cli#mammaskallare" style="border:0; width:100%; height:450px;"></iframe>
+                <iframe src="https://kiwiirc.com/client/irc.bsnet.se/?nick=guest|?&theme=cli#mammaskallare" style="border:0; width:100%; height:550px;"></iframe>
             </div>
         </div>
 
@@ -74,7 +79,7 @@
 
     <!-- jQuery Version 1.11.0 -->
     <script src="/jquery/dist/jquery.min.js"></script>
-
+    <script src="/angular/angular.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
 
